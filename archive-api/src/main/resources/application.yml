@@ -1,0 +1,7 @@
+server:
+  servlet.contextPath: /
+  port: 8103
+
+spring:
+  application:
+    name: archive-service-api

@@ -1,0 +1,5 @@
+rootProject.name = 'archiveservice'
+include 'archive-api'
+include 'archive-application'
+include 'archive-storage'
+
