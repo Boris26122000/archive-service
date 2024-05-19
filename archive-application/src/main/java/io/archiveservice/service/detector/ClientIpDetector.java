@@ -2,10 +2,9 @@ package io.archiveservice.service.detector;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+import io.archiveservice.enums.HttpHeader;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.Optional;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -37,17 +36,5 @@ public class ClientIpDetector {
 
 	private static boolean isIpNotFound(String ip) {
 		return isBlank(ip) || UNKNOWN.equalsIgnoreCase(ip);
-	}
-
-	@Getter
-	@RequiredArgsConstructor
-	private enum HttpHeader {
-		X_FORWARDED_FOR("X-Forwarded-For"),
-		PROXY_CLIENT_IP("Proxy-Client-IP"),
-		WL_PROXY_CLIENT_IP("WL-Proxy-Client-IP"),
-		HTTP_CLIENT_IP("HTTP_CLIENT_IP"),
-		HTTP_X_FORWARDED_FOR("HTTP_X_FORWARDED_FOR");
-
-		private final String key;
 	}
 }
