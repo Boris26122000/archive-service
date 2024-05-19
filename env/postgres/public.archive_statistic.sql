@@ -10,4 +10,4 @@ comment on table public.archive_statistic is 'Archive service usage statistic';
 
 comment on column public.archive_statistic.ip_address is 'User IP address';
 comment on column public.archive_statistic.archive_usage_count is 'Count for archive service usage';
-comment on column public.archive_statistic.archive_usage_count is 'Date of archive service usage';
+comment on column public.archive_statistic.usage_date is 'Date of archive service usage';
