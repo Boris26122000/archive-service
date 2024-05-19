@@ -2,12 +2,10 @@ package io.archiveservice.service.impl;
 
 import static io.archiveservice.enums.ArchiveType.ZIP;
 
-import io.archiveservice.ArchiveInputDTO;
-import io.archiveservice.ArchivedResourceDTO;
-import io.archiveservice.service.AbstractArchiveService;
+import io.archiveservice.ArchiveDTO;
+import io.archiveservice.ArchiveResultDTO;
 import io.archiveservice.service.ArchiveService;
 import io.archiveservice.service.exception.ArchiveCreateException;
-import io.archiveservice.service.validator.ArchiveInputValidator;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
@@ -23,20 +21,16 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class ArchiveZipServiceImpl extends AbstractArchiveService implements ArchiveService {
 
-	private final ArchiveInputValidator archiveInputValidator;
-
 	@Override
-	public ArchivedResourceDTO archive(ArchiveInputDTO archiveInputDTO) {
-		archiveInputValidator.validateInput(archiveInputDTO);
-
+	public ArchiveResultDTO archive(ArchiveDTO archiveInputDTO) {
 		ByteArrayResource resource = getArchivedResource(archiveInputDTO);
-		return ArchivedResourceDTO.builder()
+		return ArchiveResultDTO.builder()
 				.resource(resource)
 				.fileName(getFileWithExtension(archiveInputDTO))
 				.build();
 	}
 
-	private static ByteArrayResource getArchivedResource(ArchiveInputDTO archiveInputDTO) {
+	private static ByteArrayResource getArchivedResource(ArchiveDTO archiveInputDTO) {
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				ZipOutputStream zos = new ZipOutputStream(baos)) {
 

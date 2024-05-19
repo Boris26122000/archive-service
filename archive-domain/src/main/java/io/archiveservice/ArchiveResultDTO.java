@@ -6,7 +6,7 @@ import org.springframework.core.io.ByteArrayResource;
 
 @Data
 @Builder
-public class ArchivedResourceDTO {
+public class ArchiveResultDTO {
 
 	private String fileName;
 	private ByteArrayResource resource;

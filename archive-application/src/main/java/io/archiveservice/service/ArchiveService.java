@@ -1,9 +1,9 @@
 package io.archiveservice.service;
 
-import io.archiveservice.ArchiveInputDTO;
-import io.archiveservice.ArchivedResourceDTO;
+import io.archiveservice.ArchiveDTO;
+import io.archiveservice.ArchiveResultDTO;
 
 public interface ArchiveService {
 
-	ArchivedResourceDTO archive(ArchiveInputDTO archiveInputDTO);
+	ArchiveResultDTO archive(ArchiveDTO archiveInputDTO);
 }
