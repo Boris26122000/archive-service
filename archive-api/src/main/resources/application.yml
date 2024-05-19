@@ -5,3 +5,10 @@ server:
 spring:
   application:
     name: archive-service-api
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+archive:
+  zip:
+    max-upload-size: 1048576
