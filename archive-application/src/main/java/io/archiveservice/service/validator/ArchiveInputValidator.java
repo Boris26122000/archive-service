@@ -3,6 +3,7 @@ package io.archiveservice.service.validator;
 import static java.util.Objects.isNull;
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
+import io.archiveservice.ArchiveDTO;
 import io.archiveservice.ArchiveInputDTO;
 import io.archiveservice.service.exception.ArchiveInputValidationException;
 import java.util.HashSet;

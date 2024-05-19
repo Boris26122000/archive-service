@@ -3,4 +3,5 @@ include 'archive-api'
 include 'archive-domain'
 include 'archive-application'
 include 'archive-storage'
+include 'archive-storage:archive-storage-postgres'
 

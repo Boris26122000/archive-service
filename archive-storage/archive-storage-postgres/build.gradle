@@ -4,6 +4,9 @@ plugins {
     id 'io.spring.dependency-management' version "$LIB_SPRING_BOOT_DEP_MNG_VER"
 }
 
+group = 'org.notifier'
+version = '0.0.1-SNAPSHOT'
+
 repositories {
     mavenCentral()
 }
@@ -15,10 +18,9 @@ configurations {
 }
 
 dependencies {
-    implementation(project(":archive-domain"))
-    implementation(project(":archive-application"))
+    implementation("org.postgresql:postgresql")
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
 
-    implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 }

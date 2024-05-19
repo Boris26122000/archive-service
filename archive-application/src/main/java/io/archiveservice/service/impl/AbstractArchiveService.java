@@ -1,15 +1,14 @@
-package io.archiveservice.service;
+package io.archiveservice.service.impl;
 
-import io.archiveservice.ArchiveInputDTO;
+import io.archiveservice.ArchiveDTO;
 import java.util.Optional;
-import java.util.UUID;
 import org.apache.commons.lang3.RandomStringUtils;
 
 public abstract class AbstractArchiveService {
 
-	protected String getFileWithExtension(ArchiveInputDTO archiveInputDTO) {
+	protected String getFileWithExtension(ArchiveDTO archiveInputDTO) {
 		Optional<String> fileName = Optional.of(archiveInputDTO)
-				.map(ArchiveInputDTO::getFileName);
+				.map(ArchiveDTO::getFileName);
 		if (fileName.isPresent()) {
 			if (fileName.get().endsWith("." + getArchiveExtension())) {
 				return fileName.get();
@@ -20,5 +19,6 @@ public abstract class AbstractArchiveService {
 			return RandomStringUtils.randomAlphabetic(10) + "." + getArchiveExtension();
 		}
 	}
+
 	protected abstract String getArchiveExtension();
 }

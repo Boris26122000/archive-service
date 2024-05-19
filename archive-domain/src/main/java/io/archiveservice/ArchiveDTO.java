@@ -6,10 +6,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Data
 @Builder
-public class ArchiveInputDTO {
+public class ArchiveDTO {
 
 	private MultipartFile[] files;
 	private String fileName;
-	private String ipAddress;
 
 }
