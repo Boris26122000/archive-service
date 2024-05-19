@@ -8,6 +8,13 @@ spring:
   servlet:
     multipart:
       max-file-size: 10MB
+  jpa:
+    database: POSTGRESQL
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5439/archive
+    password: pass
+    username: user
 
 archive:
   zip:
