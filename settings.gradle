@@ -1,5 +1,6 @@
 rootProject.name = 'archiveservice'
 include 'archive-api'
+include 'archive-domain'
 include 'archive-application'
 include 'archive-storage'
 
